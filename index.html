@@ -6,6 +6,7 @@
     <!-- فرض الوضع الفاتح ومنع سامسونج والمتصفحات من تغيير الألوان أو قلبها لوضع داكن -->
     <meta name="color-scheme" content="only light">
     <meta name="supported-color-schemes" content="light">
+    <meta name="theme-color" content="#050915">
     <title>الراوي للاستثمار العقاري | أراضي ومشروعات مصر والمدن الجديدة</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,6 +45,13 @@
             }
         }
 
+        /* إلغاء أي تعديلات تلقائية للمتصفحات مثل سامسونج إنترنت و كروم */
+        * {
+            -webkit-print-color-adjust: exact !important;
+            color-adjust: exact !important;
+            forced-color-adjust: none !important;
+        }
+
         /* منع تحديد أو نسخ النصوص في الصفحة بالكامل */
         * {
             -webkit-user-select: none !important; /* Safari & Android/Samsung browsers */
@@ -66,9 +74,6 @@
             word-spacing: 0.05em;
             background-color: #050915 !important;
             color: #f8fafc !important;
-            forced-color-adjust: none;
-            color-adjust: exact;
-            -webkit-print-color-adjust: exact;
         }
         
         .interactive-card { transition: all 0.3s ease; }
@@ -405,7 +410,7 @@
                     </div>
                 </div>
 
-                <!-- 4 (صورة مدينة الشروق - رابط مؤكد وصحيح 100%) -->
+                <!-- 4 (صورة مدينة الشروق المؤكدة) -->
                 <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=600&q=80" alt="مدينة الشروق" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
