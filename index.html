@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الراوي للاستثمار العقاري | أراضي ومشروعات مصر والخليج</title>
+    <!-- فرض الوضع الفاتح ومنع سامسونج والمتصفحات من تغيير الألوان أو قلبها لوضع داكن -->
+    <meta name="color-scheme" content="only light">
+    <meta name="supported-color-schemes" content="light">
+    <title>الراوي للاستثمار العقاري | أراضي ومشروعات مصر والمدن الجديدة</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -19,10 +22,10 @@
                             950: '#050915',
                         },
                         gold: {
-                            300: '#f6e05e',
-                            400: '#eef07b',
-                            500: '#d4af37',
-                            600: '#b8860b',
+                            300: '#ffe885',
+                            400: '#ffd700', /* ذهبي خالص ناصع */
+                            500: '#f5c518', /* ذهبي فاخر */
+                            600: '#d4af37',
                         }
                     }
                 }
@@ -30,53 +33,84 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
+        /* إيقاف وتثبيت الألوان نهائياً ضد أي وضع داكن في سامسونج أو الهواتف لمنع تحولها لبني محروق */
+        :root {
+            color-scheme: only light !important;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: only light !important;
+            }
+        }
+
+        /* منع تحديد أو نسخ النصوص في الصفحة بالكامل */
+        * {
+            -webkit-user-select: none !important; /* Safari & Android/Samsung browsers */
+            -moz-user-select: none !important;    /* Firefox */
+            -ms-user-select: none !important;     /* Internet Explorer/Edge */
+            user-select: none !important;          /* Standard */
+        }
+
+        /* السماح بإدخال النصوص داخل حقول الحاسبة والمحول فقط */
+        input, select, textarea {
+            -webkit-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+        }
+
         body { 
             font-family: 'Tajawal', sans-serif;
             letter-spacing: 0.02em;
             word-spacing: 0.05em;
+            background-color: #050915 !important;
+            color: #f8fafc !important;
+            forced-color-adjust: none;
+            color-adjust: exact;
+            -webkit-print-color-adjust: exact;
         }
- 
+        
         .interactive-card { transition: all 0.3s ease; }
         .interactive-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 15px 25px -5px rgba(212, 175, 55, 0.25);
-            border-color: #d4af37;
+            box-shadow: 0 15px 25px -5px rgba(255, 215, 0, 0.3);
+            border-color: #ffd700;
         }
- 
+
         .whatsapp-card { transition: all 0.3s ease; }
         .whatsapp-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 15px 25px -5px rgba(16, 185, 129, 0.25);
             border-color: #10b981;
         }
- 
+
         .img-zoom-container { overflow: hidden; background-color: #0f1c3f; }
         .img-zoom-container img { transition: transform 0.5s ease; }
         .interactive-card:hover .img-zoom-container img { transform: scale(1.08); }
- 
+
         .btn-special { transition: all 0.25s ease; }
         .btn-special:hover { transform: translateY(-2px); }
- 
-        /* Golden Border Style */
+
+        /* Golden Border Style - Pure Metallic Gold */
         .gold-border-btn {
-            border: 2px solid #d4af37;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
             transition: all 0.3s ease;
         }
         .gold-border-btn:hover {
-            border-color: #f6e05e;
-            box-shadow: 0 0 18px rgba(212, 175, 55, 0.6);
-            background-color: rgba(212, 175, 55, 0.15);
+            border-color: #ffe885;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.65);
+            background-color: rgba(255, 215, 0, 0.18);
         }
- 
+
         html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-navy-950 text-slate-100 selection:bg-gold-500 selection:text-navy-950">
- 
+<body class="bg-navy-950 text-slate-100 selection:bg-gold-400 selection:text-navy-950">
+
     <!-- Top Contact Bar -->
-    <div class="bg-navy-900 border-b border-gold-500/20 text-xs py-2 px-6">
+    <div class="bg-navy-900 border-b border-gold-400/25 text-xs py-2 px-6">
         <div class="container mx-auto flex flex-wrap justify-between items-center gap-2">
             <div class="flex items-center space-x-6 space-x-reverse">
                 <a href="#contact" class="flex items-center space-x-2 space-x-reverse text-slate-300 hover:text-gold-400 transition">
@@ -84,23 +118,23 @@
                     <span dir="ltr">+20 115 644 4525</span>
                 </a>
                 <a href="mailto:alrawy.investment@gmail.com" class="flex items-center space-x-2 space-x-reverse text-slate-300 hover:text-gold-400 transition">
-                    <i class="fa-regular fa-envelope text-gold-500"></i>
+                    <i class="fa-regular fa-envelope text-gold-400"></i>
                     <span>alrawy.investment@gmail.com</span>
                 </a>
             </div>
             <div class="text-gold-400 font-bold tracking-wide text-xs">
-                شركة الراوي للاستثمار العقاري — تأسست عام 2015
+                شركة الراوي للاستثمار العقاري — تأسست عام 2015 | <span id="currentDateDisplay"></span>
             </div>
         </div>
     </div>
- 
+
     <!-- Header / Navbar -->
-    <header class="bg-navy-900/95 backdrop-blur-md border-b border-gold-500/30 sticky top-0 z-50 shadow-md">
+    <header class="bg-navy-900/95 backdrop-blur-md border-b border-gold-400/35 sticky top-0 z-40 shadow-md">
         <div class="container mx-auto px-6 py-2.5 flex justify-between items-center">
- 
+            
             <!-- Logo -->
             <div class="flex items-center space-x-2.5 space-x-reverse">
-                <div class="w-8 h-8 rounded-lg border border-gold-500/60 flex items-center justify-center bg-navy-800 text-gold-400 shadow-sm">
+                <div class="w-8 h-8 rounded-lg border border-gold-400 flex items-center justify-center bg-navy-800 text-gold-400 shadow-sm">
                     <i class="fa-solid fa-landmark text-sm"></i>
                 </div>
                 <div class="leading-tight">
@@ -108,64 +142,64 @@
                     <span class="text-[10px] text-gold-400 tracking-wider font-bold block">للاستثمار العقاري</span>
                 </div>
             </div>
- 
+
             <!-- Desktop Navigation Links -->
             <nav class="hidden lg:flex items-center space-x-5 space-x-reverse text-xs font-bold text-slate-200 tracking-normal">
                 <a href="#hero" class="hover:text-gold-400 transition py-1 px-1.5 hover:bg-navy-800/50 rounded-md">الرئيسية</a>
                 <a href="#about" class="hover:text-gold-400 transition py-1 px-1.5 hover:bg-navy-800/50 rounded-md">من نحن</a>
                 <a href="#vision" class="hover:text-gold-400 transition py-1 px-1.5 hover:bg-navy-800/50 rounded-md">رؤيتنا ورسالتنا</a>
                 <a href="#services" class="hover:text-gold-400 transition py-1 px-1.5 hover:bg-navy-800/50 rounded-md">خدماتنا</a>
-                <a href="#lands" class="hover:text-gold-400 transition py-1 px-1.5 hover:bg-navy-800/50 rounded-md">خريطة الـ 28 مدينة</a>
+                <a href="#lands" class="hover:text-gold-400 transition py-1 px-1.5 hover:bg-navy-800/50 rounded-md">دليل المدن المصرية</a>
                 <a href="#calculators" class="hover:text-gold-400 transition py-1 px-1.5 hover:bg-navy-800/50 rounded-md">الأدوات والحاسبة</a>
             </nav>
- 
+
             <!-- Action Button -->
             <div class="flex items-center space-x-3 space-x-reverse">
                 <a href="#contact" class="gold-border-btn text-gold-400 hover:text-gold-300 text-[11px] font-bold px-3 py-1.5 rounded-md flex items-center space-x-1.5 space-x-reverse bg-navy-800/80">
                     <i class="fa-solid fa-paper-plane text-[10px]"></i>
                     <span>تواصل معنا</span>
                 </a>
- 
+
                 <!-- Hamburger Button for Mobile -->
                 <button id="menuBtn" class="lg:hidden text-gold-400 text-xl px-1.5 py-1 focus:outline-none" aria-label="القائمة">
                     <i class="fa-solid fa-bars" id="menuIcon"></i>
                 </button>
             </div>
         </div>
- 
+
         <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-navy-950 border-b border-gold-500/30 px-6 py-3 space-y-2 font-bold text-xs text-slate-200">
+        <div id="mobileMenu" class="hidden lg:hidden bg-navy-950 border-b border-gold-400/35 px-6 py-3 space-y-2 font-bold text-xs text-slate-200">
             <a href="#hero" class="block hover:text-gold-400 transition py-1">الرئيسية</a>
             <a href="#about" class="block hover:text-gold-400 transition py-1">من نحن</a>
             <a href="#vision" class="block hover:text-gold-400 transition py-1">رؤيتنا ورسالتنا</a>
             <a href="#services" class="block hover:text-gold-400 transition py-1">خدماتنا</a>
-            <a href="#lands" class="block hover:text-gold-400 transition py-1">خريطة الـ 28 مدينة</a>
+            <a href="#lands" class="block hover:text-gold-400 transition py-1">دليل المدن المصرية</a>
             <a href="#calculators" class="block hover:text-gold-400 transition py-1">الأدوات والحاسبة</a>
             <a href="#contact" class="block hover:text-gold-400 transition py-1">تواصل معنا</a>
         </div>
     </header>
- 
+
     <!-- Hero Section -->
-    <section id="hero" class="relative bg-navy-900 py-24 border-b border-gold-500/20 overflow-hidden">
+    <section id="hero" class="relative bg-navy-900 py-24 border-b border-gold-400/25 overflow-hidden">
         <div class="container mx-auto px-6 relative z-10 text-center max-w-3xl">
-            <span class="bg-navy-800 text-gold-400 border border-gold-500/30 px-5 py-2 rounded-full text-xs font-bold inline-block mb-6 shadow-sm">
-                <i class="fa-solid fa-award ml-1.5 text-gold-500"></i> خيارك الآمن للاستثمار العقاري منذ 2015
+            <span class="bg-navy-800 text-gold-400 border border-gold-400/35 px-5 py-2 rounded-full text-xs font-bold inline-block mb-6 shadow-sm">
+                <i class="fa-solid fa-award ml-1.5 text-gold-400"></i> خيارك الآمن للاستثمار العقاري منذ 2015
             </span>
- 
+            
             <h1 class="text-xl md:text-2xl font-bold text-slate-200 mb-3 leading-relaxed">
                 استثمر بثقة في أقوى المشروعات
             </h1>
             <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-relaxed">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-gold-600">والأراضي في مصر والمدن الجديدة</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500">والأراضي في مصر والمدن الجديدة</span>
             </h2>
- 
+
             <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
                 شركة الراوي تقدم فرصاً استثمارية واعدة ونمواً رأسمالياً آمناً في كافة المدن الجديدة ومحافظات الجمهورية والوجهات الاستثمارية الواعدة.
             </p>
- 
+            
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#lands" class="btn-special bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-black px-7 py-3.5 rounded-xl shadow-md text-sm border border-gold-300">
-                    استعرض كافة الـ 28 مدينة والمشروعات
+                <a href="#lands" class="btn-special bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 hover:from-gold-300 hover:to-gold-500 text-navy-950 font-black px-7 py-3.5 rounded-xl shadow-md text-sm border border-gold-300">
+                    استعرض دليل المدن والمشروعات
                 </a>
                 <a href="#contact" class="gold-border-btn text-gold-400 hover:text-gold-300 font-bold px-7 py-3.5 rounded-xl shadow-md flex items-center justify-center space-x-2 space-x-reverse text-sm bg-navy-800">
                     <i class="fa-solid fa-envelope-open-text text-base"></i>
@@ -174,43 +208,43 @@
             </div>
         </div>
     </section>
- 
+
     <!-- Stats Section -->
-    <section class="bg-navy-800 border-b border-gold-500/20 py-8">
+    <section class="bg-navy-800 border-b border-gold-400/25 py-8">
         <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div class="p-3 rounded-xl bg-navy-900/50 border border-gold-500/10">
+            <div class="p-3 rounded-xl bg-navy-900/50 border border-gold-400/15">
                 <h3 class="text-3xl font-black text-gold-400 mb-1">2015</h3>
                 <p class="text-xs font-bold text-slate-300">عام التأسيس والانطلاق</p>
             </div>
-            <div class="p-3 rounded-xl bg-navy-900/50 border border-gold-500/10">
-                <h3 class="text-3xl font-black text-gold-400 mb-1">+11 عاماً</h3>
+            <div class="p-3 rounded-xl bg-navy-900/50 border border-gold-400/15">
+                <h3 class="text-3xl font-black text-gold-400 mb-1" id="dynamicExperienceYears">+11 عاماً</h3>
                 <p class="text-xs font-bold text-slate-300">خبرة بالسوق العقاري</p>
             </div>
-            <div class="p-3 rounded-xl bg-navy-900/50 border border-gold-500/10">
-                <h3 class="text-3xl font-black text-gold-400 mb-1">28 مدينة</h3>
-                <p class="text-xs font-bold text-slate-300">خرائط دقيقة ومخصصة</p>
+            <div class="p-3 rounded-xl bg-navy-900/50 border border-gold-400/15">
+                <h3 class="text-3xl font-black text-gold-400 mb-1">30 مدينة</h3>
+                <p class="text-xs font-bold text-slate-300">خرائط دقيقة ومخصصة بمصر</p>
             </div>
-            <div class="p-3 rounded-xl bg-navy-900/50 border border-gold-500/10">
+            <div class="p-3 rounded-xl bg-navy-900/50 border border-gold-400/15">
                 <h3 class="text-3xl font-black text-gold-400 mb-1">100%</h3>
                 <p class="text-xs font-bold text-slate-300">أمان وقانونية الاستثمار</p>
             </div>
         </div>
     </section>
- 
+
     <!-- About Section -->
-    <section id="about" class="py-16 bg-navy-950 border-b border-gold-500/20">
+    <section id="about" class="py-16 bg-navy-950 border-b border-gold-400/25">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-10">
                 <span class="text-gold-400 font-bold text-xs tracking-widest uppercase block mb-1">عن الشركة ومسيرتها</span>
                 <h2 class="text-2xl md:text-3xl font-black text-white">من نحن</h2>
                 <p class="text-slate-300 text-base mt-3 leading-relaxed max-w-2xl mx-auto">
-                    تتمتع شركة الراوي للاستثمار العقاري بخبرة في الاستثمار والتطوير العقاري منذ عام 2015 في دولة الكويت، وواصلت نشاطها في جمهورية مصر العربية منذ عام 2019. تعمل الشركة في بيع وشراء الأراضي وتطوير الوحدات السكنية، وتسعى إلى تقديم فرص عقارية مدروسة في عدد من المدن المصرية.
+                    تتمتع شركة الراوي للاستثمار العقاري بخبرة في الاستثمار والتطوير العقاري منذ عام 2015 في دولة الكويت، وواصلت نشاطها في جمهورية مصر العربية منذ عام 2019. تعمل الشركة في بيع وشراء الأراضي وتطوير الوحدات السكنية، وتسعى إلى تقديم فرص عقارية مدروسة في كافة المدن والمحافظات المصرية.
                 </p>
             </div>
- 
+
             <div class="grid md:grid-cols-3 gap-6 items-stretch mt-10">
-                <div class="interactive-card bg-navy-900 p-6 rounded-2xl border border-gold-500/20 text-center">
-                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mx-auto mb-3">
+                <div class="interactive-card bg-navy-900 p-6 rounded-2xl border border-gold-400/25 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold-400/15 text-gold-400 flex items-center justify-center text-xl mx-auto mb-3">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                     </div>
                     <span class="text-xl font-black text-gold-400 block mb-1">2015</span>
@@ -219,9 +253,9 @@
                         بدأت شركة الراوي نشاطها في القطاع العقاري بدولة الكويت لبناء قاعدة استثمارية متينة تعتمد على المصداقية والشفافية.
                     </p>
                 </div>
- 
-                <div class="interactive-card bg-navy-900 p-6 rounded-2xl border border-gold-500/20 text-center">
-                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mx-auto mb-3">
+
+                <div class="interactive-card bg-navy-900 p-6 rounded-2xl border border-gold-400/25 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold-400/15 text-gold-400 flex items-center justify-center text-xl mx-auto mb-3">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <span class="text-xl font-black text-gold-400 block mb-1">2019</span>
@@ -230,9 +264,9 @@
                         واصلت الشركة أعمالها في السوق المصري الواعد لتستهدف أهم المحاور والمدن الحديثة وتوفر أراضٍ ومشاريع ممتازة.
                     </p>
                 </div>
- 
-                <div class="interactive-card bg-navy-900 p-6 rounded-2xl border border-gold-500/20 text-center">
-                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mx-auto mb-3">
+
+                <div class="interactive-card bg-navy-900 p-6 rounded-2xl border border-gold-400/25 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold-400/15 text-gold-400 flex items-center justify-center text-xl mx-auto mb-3">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <span class="text-xl font-black text-gold-400 block mb-1">الحاضر والمستقبل</span>
@@ -244,18 +278,17 @@
             </div>
         </div>
     </section>
- 
+
     <!-- Vision & Mission Section -->
-    <section id="vision" class="py-16 bg-navy-900 border-b border-gold-500/20">
+    <section id="vision" class="py-16 bg-navy-900 border-b border-gold-400/25">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-10">
                 <span class="text-gold-400 font-bold text-xs tracking-widest uppercase block mb-1">استراتيجيتنا</span>
                 <h2 class="text-2xl md:text-3xl font-black text-white">رؤيتنا ورسالتنا</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
-                <!-- الرؤية -->
-                <div class="interactive-card bg-navy-950 p-6 rounded-2xl border border-gold-500/20">
-                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-4 border border-gold-500/20">
+                <div class="interactive-card bg-navy-950 p-6 rounded-2xl border border-gold-400/25">
+                    <div class="w-12 h-12 rounded-xl bg-gold-400/15 text-gold-400 flex items-center justify-center text-xl mb-4 border border-gold-400/25">
                         <i class="fa-solid fa-eye"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">رؤيتنا</h3>
@@ -263,10 +296,9 @@
                         أن نكون من الشركات الأكثر ثقة واعتمادية في مجال الاستثمار والتطوير العقاري، وأن نمتلك البصمة الأبرز في توفير أراضٍ وفرص سكنية ذات قيمة متصاعدة.
                     </p>
                 </div>
- 
-                <!-- الرسالة (تم تعديل الشعار لأيقونة الظرف المعبرة) -->
-                <div class="interactive-card bg-navy-950 p-6 rounded-2xl border border-gold-500/20">
-                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-4 border border-gold-500/20">
+
+                <div class="interactive-card bg-navy-950 p-6 rounded-2xl border border-gold-400/25">
+                    <div class="w-12 h-12 rounded-xl bg-gold-400/15 text-gold-400 flex items-center justify-center text-xl mb-4 border border-gold-400/25">
                         <i class="fa-solid fa-envelope-open-text"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">رسالتنا</h3>
@@ -277,18 +309,18 @@
             </div>
         </div>
     </section>
- 
+
     <!-- Services Section -->
-    <section id="services" class="py-16 bg-navy-950 border-b border-gold-500/20">
+    <section id="services" class="py-16 bg-navy-950 border-b border-gold-400/25">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-12">
                 <span class="text-gold-400 font-bold text-xs tracking-widest uppercase block mb-1">ما نقدمه لعملائنا</span>
                 <h2 class="text-2xl md:text-3xl font-black text-white">خدماتنا المتميزة</h2>
             </div>
- 
+
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="interactive-card bg-navy-900 rounded-2xl border border-gold-500/20 p-6 text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-400 border border-gold-500/20 flex items-center justify-center text-2xl mx-auto mb-4">
+                <div class="interactive-card bg-navy-900 rounded-2xl border border-gold-400/25 p-6 text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-400/15 text-gold-400 border border-gold-400/25 flex items-center justify-center text-2xl mx-auto mb-4">
                         <i class="fa-solid fa-handshake"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">بيع وشراء الأراضي</h3>
@@ -296,9 +328,9 @@
                         توفير أراضٍ متميزة في أرقى المدن الجديدة بكافة المستندات والأوراق القانونية المضمونة.
                     </p>
                 </div>
- 
-                <div class="interactive-card bg-navy-900 rounded-2xl border border-gold-500/20 p-6 text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-400 border border-gold-500/20 flex items-center justify-center text-2xl mx-auto mb-4">
+
+                <div class="interactive-card bg-navy-900 rounded-2xl border border-gold-400/25 p-6 text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-400/15 text-gold-400 border border-gold-400/25 flex items-center justify-center text-2xl mx-auto mb-4">
                         <i class="fa-solid fa-city"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">التطوير العقاري</h3>
@@ -306,9 +338,9 @@
                         تخطيط وتنفيذ المشاريع العقارية وتطوير المساحات بأعلى معايير الجودة المعمارية والإنشائية.
                     </p>
                 </div>
- 
-                <div class="interactive-card bg-navy-900 rounded-2xl border border-gold-500/20 p-6 text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-400 border border-gold-500/20 flex items-center justify-center text-2xl mx-auto mb-4">
+
+                <div class="interactive-card bg-navy-900 rounded-2xl border border-gold-400/25 p-6 text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-gold-400/15 text-gold-400 border border-gold-400/25 flex items-center justify-center text-2xl mx-auto mb-4">
                         <i class="fa-solid fa-file-signature"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">تسويق وعقود الوحدات السكنية</h3>
@@ -319,455 +351,491 @@
             </div>
         </div>
     </section>
- 
+
     <!-- Lands & Cities Section -->
-    <section id="lands" class="py-16 bg-navy-900 border-b border-gold-500/20">
+    <section id="lands" class="py-16 bg-navy-900 border-b border-gold-400/25">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <span class="text-gold-400 font-bold text-xs tracking-widest uppercase block mb-1">دليل الطروحات الشامل</span>
-                <h2 class="text-2xl md:text-3xl font-black text-white">الـ 28 مدينة والمحافظات المتاحة للاستثمار بمصر</h2>
-                <p class="text-slate-400 text-xs mt-2">عرض تفصيلي لـ 28 مدينة وموقع استثماري، كل مدينة بكارت مستقل وخريطة دقيقة 100%</p>
+                <h2 class="text-2xl md:text-3xl font-black text-white">دليل المدن والمواقع الاستثمارية بمصر</h2>
+                <p class="text-slate-400 text-xs mt-2">عرض تفصيلي منفصل لكل مدينة وموقع استثماري مع خريطة أقمار صناعية تفاعلية وصور فريدة غير مكررة</p>
             </div>
- 
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
- 
+                
                 <!-- 1 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" alt="القاهرة الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
                         <h3 class="text-lg font-bold text-white mb-1.5">1. القاهرة الجديدة (التجمع الخامس)</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">أراضٍ سكنية وتجارية وإدارية في الأحياء الأكثر طلباً ورُقياً.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('القاهرة الجديدة (التجمع الخامس)', '30.0055', '31.4779', 'أراضٍ ومشاريع متميزة بالتسعين الشمالي والجنوبي والأحياء السكنية الأكثر طلباً بالقاهرة الجديدة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('القاهرة الجديدة (التجمع الخامس)', '30.0074', '31.4423', 'أراضٍ ومشاريع متميزة بالتسعين الشمالي والجنوبي والأحياء السكنية الأكثر طلباً بالقاهرة الجديدة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 2 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
-                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="بيت الوطن" class="w-full h-44 object-cover"></div>
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=600&q=80" alt="بيت الوطن" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
                         <h3 class="text-lg font-bold text-white mb-1.5">2. منطقة بيت الوطن</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">مواقع استراتيجية متميزة بالقرب من امتداد الرحاب ومحور بن زايد.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('منطقة بيت الوطن', '30.0380', '31.4920', 'قطع أراضي ممتازة في أحياء بيت الوطن بالتجمع الخامس بالقرب من النادي الأهلي وطريق السويس.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('منطقة بيت الوطن', '30.0450', '31.4980', 'قطع أراضي ممتازة في أحياء بيت الوطن بالتجمع الخامس بالقرب من النادي الأهلي وطريق السويس.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 3 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="العاصمة الإدارية" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
                         <h3 class="text-lg font-bold text-white mb-1.5">3. العاصمة الإدارية الجديدة</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">طروحات أراضي ومشاريع في الداون تاون والحي الحكومي.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('العاصمة الإدارية الجديدة', '29.9820', '31.7250', 'أحدث المشروعات الاستثمارية والتجارية والسكنية في قلب العاصمة الإدارية والداون تاون.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('العاصمة الإدارية الجديدة', '30.0160', '31.7485', 'أحدث المشروعات الاستثمارية والتجارية والسكنية في قلب العاصمة الإدارية والداون تاون.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 4 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
-                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="مدينة الشروق" class="w-full h-44 object-cover"></div>
+
+                <!-- 4 (صورة مدينة الشروق - رابط مؤكد وصحيح 100%) -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=600&q=80" alt="مدينة الشروق" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
                         <h3 class="text-lg font-bold text-white mb-1.5">4. مدينة الشروق</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">أراضٍ ومشاريع بمواقع حيوية ممتازة تناسب السكن العائلي.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة الشروق', '30.1250', '31.6050', 'أراضٍ سكنية وخدمية ممتازة في أحياء مدينة الشروق بالقرب من الإسماعيلية والقطار الكهربائي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة الشروق', '30.1705', '31.6210', 'أراضٍ سكنية وخدمية ممتازة في أحياء مدينة الشروق بالقرب من الإسماعيلية والقطار الكهربائي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 5 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="مدينة بدر" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">5. مدينة بدر</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">5. مدينة بدر (الطرح الجديد)</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">فرص استثمارية ممتازة بالقرب من العاصمة الإدارية.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة بدر', '30.1380', '31.7150', 'مواقع استثمارية واعدة بمدينة بدر والمناطق المتاخمة للعاصمة الإدارية وحدائق العاصمة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة بدر', '30.1333', '31.7333', 'مواقع استثمارية واعدة بمدينة بدر والمناطق المتاخمة للعاصمة الإدارية وحدائق العاصمة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 6 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="هليوبوليس الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
                         <h3 class="text-lg font-bold text-white mb-1.5">6. هليوبوليس الجديدة</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">تخطيط عمراني فاخر وموقع يربط بين طريق السويس والإسماعيلية.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('هليوبوليس الجديدة', '30.1550', '31.6550', 'أراضٍ ممتازة وتخطيط راقٍ يربط بين طريق السويس وطريق الإسماعيلية الصحراوي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('هليوبوليس الجديدة', '30.1585', '31.6700', 'أراضٍ ممتازة وتخطيط راقٍ يربط بين طريق السويس وطريق الإسماعيلية الصحراوي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 7 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" alt="مدينة 6 أكتوبر" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
                         <h3 class="text-lg font-bold text-white mb-1.5">7. مدينة 6 أكتوبر</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">أراضٍ متميزة بالمناطق السياحية والأحياء السكنية الراقية.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة 6 أكتوبر', '29.9750', '30.9550', 'فرص أراضي سكنية وتجارية بالتوسعات الشمالية والأحياء المميزة بمدينة 6 أكتوبر.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة 6 أكتوبر', '29.9565', '30.9380', 'فرص أراضي سكنية وتجارية بالتوسعات الشمالية والأحياء المميزة بمدينة 6 أكتوبر.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 8 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80" alt="حدائق أكتوبر" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
                         <h3 class="text-lg font-bold text-white mb-1.5">8. حدائق أكتوبر</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">مناطق توسع سريع مع طروحات متنوعة للأراضي بالقرب من زويل.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('حدائق أكتوبر', '29.9150', '30.9150', 'أراضٍ في مناطق التوسع السريع بحدائق أكتوبر وأكتوبر الجديدة بالقرب من طريق زويل.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('حدائق أكتوبر', '29.9320', '31.0250', 'أراضٍ في مناطق التوسع السريع بحدائق أكتوبر وأكتوبر الجديدة بالقرب من طريق زويل.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 9 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" alt="الشيخ زايد" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
                         <h3 class="text-lg font-bold text-white mb-1.5">9. مدينة الشيخ زايد</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">أعلى فئات الأراضي قيمة ورُقياً والحزام الأخضر.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة الشيخ زايد', '30.0450', '30.9850', 'أراضٍ استثمارية رفيعة المستوى في الحزام الأخضر والتوسعات الشمالية للشيخ زايد.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة الشيخ زايد', '30.0480', '30.9850', 'أراضٍ استثمارية رفيعة المستوى في الحزام الأخضر والتوسعات الشمالية للشيخ زايد.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 10 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="العلمين الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
                         <h3 class="text-lg font-bold text-white mb-1.5">10. مدينة العلمين الجديدة</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">واجهة الاستثمار السياحي والفندقي والتجاري على البحر المتوسط.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة العلمين الجديدة', '30.8350', '28.9550', 'مشاريع وأراضي استثمارية وسياحية فريدة في منطقة أبراج العلمين والساحل الشمالي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة العلمين الجديدة', '30.8400', '28.9500', 'مشاريع وأراضي استثمارية وسياحية فريدة في منطقة أبراج العلمين والساحل الشمالي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 11 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
-                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" alt="رأس الحكمة" class="w-full h-44 object-cover"></div>
-                    <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">11. منطقة رأس الحكمة</h3>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-3">الوجهة الاستثمارية الساحلية الكبرى على الساحل الشمالي الغربي.</p>
-                    </div>
-                    <div class="p-5 pt-0">
-                        <button onclick="openMapModal('منطقة رأس الحكمة', '31.1200', '27.7400', 'فرص استثمارية كبرى وضخمة في أحدث وأهم واجهة سياحية عالمية على البحر المتوسط.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
-                            <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
-                        </button>
-                    </div>
-                </div>
- 
-                <!-- 12 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80" alt="برج العرب الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">12. مدينة برج العرب الجديدة</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">11. مدينة برج العرب الجديدة</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">مواقع متميزة بالإسكندرية بالقرب من المناطق الصناعية واللوجستية.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة برج العرب الجديدة', '30.9150', '29.6750', 'أراضٍ سكنية وصناعية ولوجستية بمحيط مطار برج العرب ومشاريع الإسكندرية.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة برج العرب الجديدة', '30.9150', '29.5850', 'أراضٍ سكنية وصناعية ولوجستية بمحيط مدينة برج العرب الجديدة ومحور المطار.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 13 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+
+                <!-- 12 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="مدينة السادات" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">13. مدينة السادات</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">12. مدينة السادات</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">أراضٍ استثمارية وصناعية بمواقع ممتازة على طريق الصحراوي.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة السادات', '30.3850', '30.5250', 'أراضٍ سكنية ومناطق صناعية ومخازن بمواقع حيوية على طريق القاهرة الإسكندرية الصحراوي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة السادات', '30.3667', '30.5833', 'أراضٍ سكنية ومناطق صناعية ومخازن بمواقع حيوية على طريق القاهرة الإسكندرية الصحراوي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 14 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+
+                <!-- 13 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="العاشر من رمضان" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">14. مدينة العاشر من رمضان</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">13. مدينة العاشر من رمضان</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">طروحات أراضي تجارية وخدمية ومخازن بأعلى إقبال.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة العاشر من رمضان', '30.3050', '31.7450', 'أراضٍ تجارية وخدمية ومناطق صناعية محورية تربط بين بلبيس وطريق الإسماعيلية.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة العاشر من رمضان', '30.3000', '31.7333', 'أراضٍ تجارية وخدمية ومناطق صناعية محورية تربط بين بلبيس وطريق الإسماعيلية.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 15 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+
+                <!-- 14 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="مدينة العبور" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">15. مدينة العبور</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">14. مدينة العبور</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">مواقع ممتازة بالقرب من الدائري الأوسطي ومحاور القاهرة.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة العبور', '30.2250', '31.4750', 'أراضٍ سكنية وتجارية ممتازة بمحيط العبور والعبور الجديدة والدائري الأوسطي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة العبور', '30.2215', '31.4720', 'أراضٍ سكنية وتجارية ممتازة بمحيط العبور والعبور الجديدة والدائري الأوسطي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 16 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
-                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="المنصورة الجديدة" class="w-full h-44 object-cover"></div>
-                    <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">16. مدينة المنصورة الجديدة</h3>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-3">عروس الدلتا والواجهة الشاطئية للاستثمار السكني والتجاري.</p>
-                    </div>
-                    <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة المنصورة الجديدة', '31.4350', '31.5550', 'مواقع شاطئية وسكنية استثمارية متميزة جداً على الطريق الساحلي الدولي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
-                            <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
-                        </button>
-                    </div>
-                </div>
- 
-                <!-- 17 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+
+                <!-- 15 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=600&q=80" alt="سوهاج الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">17. سوهاج الجديدة</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">15. سوهاج الجديدة</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">فرص استثمارية واعدة وأراضٍ سكنية بمدن الصعيد الجديدة.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('سوهاج الجديدة', '26.4750', '31.7050', 'طروحات أراضي سكنية وتجارية ممتازة بمدينة سوهاج الجديدة بوسط الصعيد.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('سوهاج الجديدة', '26.5500', '31.8333', 'طروحات أراضي سكنية وتجارية ممتازة بمدينة سوهاج الجديدة بوسط الصعيد.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 18 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
-                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="مدينة ناصر غرب أسيوط" class="w-full h-44 object-cover"></div>
+
+                <!-- 16: مدينة ناصر الجديدة (غرب أسيوط) -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="مدينة ناصر الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">18. مدينة ناصر (غرب أسيوط)</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">16. مدينة ناصر الجديدة (غرب أسيوط)</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">محور عمراني واعد وجديد يخدم منطقة أسيوط والصعيد.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة ناصر (غرب أسيوط)', '27.2300', '31.0500', 'موقع استراتيجي فريد بمدينة ناصر غرب أسيوط، فرص أراضي سكنية وتجارية متصاعدة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة ناصر الجديدة (غرب أسيوط)', '27.1800', '31.1000', 'موقع استراتيجي فريد بمدينة ناصر غرب أسيوط، فرص أراضي سكنية وتجارية متصاعدة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 19 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
-                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="أسوان الجديدة" class="w-full h-44 object-cover"></div>
+
+                <!-- 17 - أسوان الجديدة -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="أسوان الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">19. أسوان الجديدة</h3>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-3">أراضٍ استثمارية مطلة على النيل ومواقع خدمية واعدة أقصى جنوب مصر.</p>
+                        <h3 class="text-lg font-bold text-white mb-1.5">17. أسوان الجديدة</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-3">أراضٍ استثمارية ومواقع نيلية ساحرة ومتميزة أقصى جنوب مصر.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('أسوان الجديدة', '24.1850', '32.8850', 'مواقع فريدة مطلة على النيل والربط المباشر مع المحاور السياحية بجنوب مصر.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('أسوان الجديدة', '24.1500', '32.8333', 'مواقع فريدة مطلة على النيل ومراكب النيل الخالد والمحاور السياحية بجنوب مصر.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 20 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+
+                <!-- 18 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=600&q=80" alt="قنا الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">20. قنا الجديدة</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">18. قنا الجديدة</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">محور عمراني متطور وأراضٍ استثمارية جاهزة للبناء والتوسع.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('قنا الجديدة', '26.1500', '32.7800', 'قطع استثمارية سكنية وتجارية بمواقع متطورة ومكتملة المرافق بشرق الصعيد.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('قنا الجديدة', '26.1667', '32.7333', 'قطع استثمارية سكنية وتجارية بمواقع متطورة ومكتملة المرافق بشرق الصعيد.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 21 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+
+                <!-- 19 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80" alt="مدينة المستقبل" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">21. مدينة المستقبل (Mostakbal City)</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">19. مدينة المستقبل (Mostakbal City)</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">أرقى التجمعات العمرانية الذكية بالقرب من العاصمة الإدارية.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('مدينة المستقبل', '30.0850', '31.6250', 'أراضٍ ومشاريع في أرقى المدن الذكية المخدومة بالقرب من مدينتي والتجمع والعاصمة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة المستقبل', '30.1100', '31.6000', 'أراضٍ ومشاريع في أرقى المدن الذكية المخدومة بالقرب من مدينتي والتجمع والعاصمة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 22 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
-                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" alt="العين السخنة" class="w-full h-44 object-cover"></div>
+
+                <!-- 20 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="العين السخنة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">22. العين السخنة والجلالة</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">20. العين السخنة والجلالة</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">أراضٍ سياحية وفندقية واستثمارية على البحر الأحمر مباشرة.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('العين السخنة والجلالة', '29.6250', '32.3350', 'أراضٍ ومشاريع سياحية وفندقية ممتازة بمدينة الجلالة العالمية ومحيط العين السخنة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('العين السخنة والجلالة', '29.5800', '32.3400', 'أراضٍ ومشاريع سياحية وفندقية ممتازة بمدينة الجلالة العالمية ومحيط العين السخنة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 23 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+
+                <!-- 21 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" alt="الإسكندرية" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">23. الإسكندرية (سموحة وكفر عبده)</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">21. الإسكندرية (سموحة وكفر عبده)</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">عقارات وأراضي تجارية وإدارية وسكنية بقلب عروس البحر المتوسط.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('الإسكندرية (سموحة وكفر عبده)', '31.2050', '29.9150', 'مواقع عقارية وأراضٍ تجارية متميزة في سموحة، كفر عبده، ومحاور الإسكندرية.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('الإسكندرية (سموحة وكفر عبده)', '31.2001', '29.9187', 'مواقع عقارية وأراضٍ تجارية متميزة في سموحة، كفر عبده، ومحاور الإسكندرية.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 24 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
-                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=600&q=80" alt="دمياط وبورسعيد" class="w-full h-44 object-cover"></div>
+
+                <!-- 22 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=600&q=80" alt="دمياط الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">24. دمياط الجديدة وبورسعيد</h3>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-3">طروحات أراضي استثمارية ومشاريع تجارية في مدن الدلتا الساحلية.</p>
+                        <h3 class="text-lg font-bold text-white mb-1.5">22. مدينة دمياط الجديدة</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-3">طروحات أراضي استثمارية ومشاريع تجارية بالمنطقة الشاطئية والصناعية.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('دمياط الجديدة وبورسعيد', '31.4450', '31.6850', 'فرص استثمارية ممتازة بالمنطقة الشاطئية والصناعية بدمياط الجديدة وبورسعيد.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة دمياط الجديدة', '31.4385', '31.6705', 'فرص استثمارية ممتازة بالمنطقة الشاطئية والصناعية بالسكنية بدمياط الجديدة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 25 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+
+                <!-- 23 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=600&q=80" alt="بورسعيد" class="w-full h-44 object-cover"></div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white mb-1.5">23. محافظة بورسعيد</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-3">مواقع تجارية ولوجستية متميزة بالقرب من قناة السويس والميناء.</p>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="openMapModal('محافظة بورسعيد', '31.2653', '32.3019', 'فرص عقارية وتجارية ولوجستية بمواقع حيوية بقلب محافظة بورسعيد ومحور القناة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                            <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 24 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="المنيا الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">25. المنيا الجديدة وبني سويف</h3>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-3">فرص أراضي سكنية ومخدومة بالكامل في مدن شمال الصعيد.</p>
+                        <h3 class="text-lg font-bold text-white mb-1.5">24. مدينة المنيا الجديدة</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-3">فرص أراضي سكنية ومخدومة بالكامل في مركز شمال الصعيد.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('المنيا الجديدة وبني سويف', '28.1050', '30.7550', 'أراضٍ ومشاريع سكنية مخدومة بالكامل بالمناطق المركزية بالمنيا الجديدة وبني سويف.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة المنيا الجديدة', '28.0833', '30.8000', 'أراضٍ ومشاريع سكنية مخدومة بالكامل بالمناطق المركزية بالمنيا الجديدة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
-                <!-- 26 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
-                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="الغردقة ومرسى علم" class="w-full h-44 object-cover"></div>
+
+                <!-- 25 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80" alt="بني سويف الجديدة" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">26. الغردقة ومرسى علم</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">25. مدينة بني سويف الجديدة</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-3">قطع أراضي سكنية وصناعية بموقع متميز شرق النيل.</p>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="openMapModal('مدينة بني سويف الجديدة', '29.0667', '31.1000', 'أراضٍ سكنية وصناعية بمواقع ممتازة بمدينة بني سويف الجديدة بشرق النيل.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                            <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 26 -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80" alt="الغردقة" class="w-full h-44 object-cover"></div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white mb-1.5">26. مدينة الغردقة والجونة</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">أراضٍ سياحية وعقارات استثمارية ممتازة على سواحل البحر الأحمر.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('الغردقة ومرسى علم', '27.2550', '33.8150', 'أراضٍ ومشاريع سياحية وفندقية وتجارية في الجونة، الغردقة، ومحيط مرسى علم.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('مدينة الغردقة والجونة', '27.2579', '33.8116', 'أراضٍ ومشاريع سياحية وفندقية وتجارية في الجونة والغردقة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 27 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
                     <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=600&q=80" alt="شرم الشيخ" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
-                        <h3 class="text-lg font-bold text-white mb-1.5">27. شرم الشيخ وجنوب سيناء</h3>
+                        <h3 class="text-lg font-bold text-white mb-1.5">27. مدينة شرم الشيخ</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">فرص استثمارية فريدة ومنتجعات وأراضٍ سياحية في جوهرة سيناء.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('شرم الشيخ وجنوب سيناء', '27.9150', '34.3250', 'أراضٍ سياحية وتجارية واستثمارية فريدة بمواقع متميزة في خليج نعمة وشارع السلام.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('شرم الشيخ', '27.9158', '34.3299', 'أراضٍ سياحية وتجارية واستثمارية فريدة بمواقع متميزة في خليج نعمة وشارع السلام.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
                 <!-- 28 -->
-                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-500/20 overflow-hidden shadow-lg flex flex-col justify-between">
-                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="الأراضي الزراعية" class="w-full h-44 object-cover"></div>
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80" alt="الأراضي الزراعية" class="w-full h-44 object-cover"></div>
                     <div class="p-5">
                         <h3 class="text-lg font-bold text-white mb-1.5">28. الأراضي الزراعية والمستصلحة</h3>
                         <p class="text-slate-300 text-xs leading-relaxed mb-3">مساحات ومزارع مستصلحة ذات ملكية وأوراق قانونية موثوقة.</p>
                     </div>
                     <div class="p-5 pt-0">
-                        <button onclick="openMapModal('الأراضي الزراعية والمستصلحة', '29.3050', '30.8450', 'مزارع ومساحات مستصلحة ومجهزة للري الحديث بأوراق وحيازة قانونية رسمية موثوقة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                        <button onclick="openMapModal('الأراضي الزراعية والمستصلحة', '30.3500', '30.5000', 'مزارع ومساحات مستصلحة ومجهزة للري الحديث بطريق مصر إسكندرية الصحراوي بأوراق وحيازة قانونية رسمية موثوقة.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
                             <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
                         </button>
                     </div>
                 </div>
- 
+
+                <!-- 29: مدينة سفنكس الجديدة -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="مدينة سفنكس الجديدة" class="w-full h-44 object-cover"></div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white mb-1.5">29. مدينة سفنكس الجديدة</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-3">محور استثماري وعمراني واعد غرب الجيزة بالقرب من مطار سفنكس الدولي.</p>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="openMapModal('مدينة سفنكس الجديدة', '30.1150', '30.8250', 'أراضٍ ومشاريع استثمارية واعدة في امتداد طريق الإسكندرية الصحراوي ومحيط مطار سفنكس الدولي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                            <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 30: مدينة رأس الحكمة -->
+                <div class="interactive-card bg-navy-950 rounded-2xl border border-gold-400/25 overflow-hidden shadow-lg flex flex-col justify-between">
+                    <div class="img-zoom-container"><img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80" alt="مدينة رأس الحكمة" class="w-full h-44 object-cover"></div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white mb-1.5">30. مدينة رأس الحكمة (الساحل الشمالي)</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-3">درة الساحل الشمالي ووجهة الاستثمار السياحي والعقاري العالمي الكبرى.</p>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="openMapModal('مدينة رأس الحكمة (الساحل الشمالي)', '31.2333', '27.8500', 'مواقع استثمارية وسياحية فريدة على شواطئ البحر الأبيض المتوسط مباشرة بخلجان رأس الحكمة بالساحل الشمالي.')" class="gold-border-btn block w-full text-center text-gold-400 font-extrabold py-2 rounded-lg text-xs bg-navy-900 cursor-pointer">
+                            <i class="fa-solid fa-map-location-dot ml-1"></i> تحديد الموقع والمعلومات
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ملاحظة توضيحية بخصوص الأراضي الأخرى -->
+            <div class="mt-10 text-center bg-navy-950 border border-gold-400/35 p-6 rounded-2xl max-w-2xl mx-auto">
+                <p class="text-slate-300 text-xs leading-relaxed">
+                    <i class="fa-solid fa-circle-info text-gold-400 ml-1.5"></i>
+                    هناك العديد من الأراضي والمواقع الاستثمارية الأخرى التابعة لنا والتي لم يتم إضافتها في الموقع بعد، ويمكنكم الاستعلام عنها مباشرة عبر التواصل معنا.
+                </p>
             </div>
         </div>
     </section>
- 
-    <!-- Modal window specifying the exact map location and showing information underneath -->
+
+    <!-- Modal window -->
     <div id="mapModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden px-4">
-        <div class="bg-navy-900 border border-gold-500/40 w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
- 
+        <div class="bg-navy-900 border border-gold-400/45 w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            
             <!-- Close Button -->
-            <button onclick="closeMapModal()" class="absolute top-4 left-4 text-slate-400 hover:text-white text-xl w-8 h-8 rounded-full bg-navy-950 flex items-center justify-center border border-gold-500/20">
+            <button onclick="closeMapModal()" class="absolute top-4 left-4 text-slate-400 hover:text-white text-xl w-8 h-8 rounded-full bg-navy-950 flex items-center justify-center border border-gold-400/25">
                 <i class="fa-solid fa-xmark"></i>
             </button>
- 
-            <!-- Title -->
+
+            <!-- Title & Disclaimer Badge -->
             <div class="text-center mb-4">
-                <span class="bg-gold-500/10 text-gold-400 border border-gold-500/30 px-3 py-1 rounded-full text-[11px] font-bold inline-block mb-2">
-                    <i class="fa-solid fa-location-crosshairs ml-1"></i> تم تحديد موقع المدينة بدقة
+                <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 px-3 py-1.5 rounded-full text-[11px] font-bold inline-block mb-2 leading-relaxed">
+                    <i class="fa-solid fa-triangle-exclamation ml-1"></i> تنويه هام: هذا الموقع توضيحي وتقريبي فقط نعتمد فيه على خرائط جوجل، ولذلك قد يكون غير دقيق بنسبة 100% في تحديد الإحداثيات الفعلية للموقع بدقة تامة.
                 </span>
-                <h3 id="modalCityTitle" class="text-xl font-black text-white"></h3>
+                <h3 id="modalCityTitle" class="text-xl font-black text-white mt-1"></h3>
             </div>
- 
-            <!-- Screen 1: Interactive Google Maps Frame (Exact Zoom Adjusted) -->
-            <div class="relative bg-navy-950 border-2 border-gold-500/30 rounded-2xl h-64 overflow-hidden shadow-inner mb-5">
+
+            <!-- Screen 1: Satellite Map Frame مع التكبير الدقيق z=14 للتركيز على الشاطئ والخليج مباشر -->
+            <div class="relative bg-navy-950 border-2 border-gold-400/35 rounded-2xl h-64 overflow-hidden shadow-inner mb-5">
                 <iframe id="mapIframe" class="w-full h-full border-0" loading="lazy" allowfullscreen src=""></iframe>
             </div>
- 
+
             <!-- Screen 2: Detailed Info under the Map -->
-            <div class="bg-navy-950 border border-gold-500/20 rounded-2xl p-4 text-right space-y-3 mb-5">
+            <div class="bg-navy-950 border border-gold-400/25 rounded-2xl p-4 text-right space-y-3 mb-5">
                 <h4 class="text-sm font-bold text-gold-400 flex items-center space-x-2 space-x-reverse">
-                    <i class="fa-solid fa-circle-info text-gold-500"></i>
+                    <i class="fa-solid fa-circle-info text-gold-400"></i>
                     <span>معلومات وتفاصيل الموقع المحدد:</span>
                 </h4>
                 <p id="modalCityInfo" class="text-slate-300 text-xs leading-relaxed"></p>
-                <div class="pt-2 border-t border-gold-500/10 flex items-center justify-between text-[11px] text-slate-400">
+                <div class="pt-2 border-t border-gold-400/15 flex items-center justify-between text-[11px] text-slate-400">
                     <span>حالة الأراضي: <strong class="text-emerald-400">متاحة للاستثمار والتعاقد</strong></span>
                     <span>الجهة: <strong class="text-gold-400">شركة الراوي للاستثمار العقاري</strong></span>
                 </div>
             </div>
- 
+
             <!-- Screen 3: WhatsApp Contact Box -->
             <div class="whatsapp-card bg-navy-950 p-4 rounded-2xl border border-emerald-500/60 shadow-md">
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
                     <div class="text-center sm:text-right">
                         <span class="text-emerald-400 font-bold text-xs block">التواصل معنا عبر الواتساب</span>
-                        <span class="text-slate-300 text-[11px] block mt-0.5">استفسر عن الأسعار وتفاصيل هذه المدينة المحدّدة فوراً</span>
+                        <span class="text-slate-300 text-[11px] block mt-0.5">استفسر عن الأسعار والتفاصيل الدقيقة لهذه المدينة فوراً</span>
                     </div>
                     <a id="modalWhatsappBtn" href="" target="_blank" class="btn-special bg-emerald-600 hover:bg-emerald-500 text-white font-black px-5 py-2.5 rounded-xl text-xs shadow-md border border-emerald-400/40 flex items-center justify-center space-x-2 space-x-reverse w-full sm:w-auto">
                         <i class="fa-brands fa-whatsapp text-base"></i>
@@ -775,69 +843,72 @@
                     </a>
                 </div>
             </div>
- 
+
         </div>
     </div>
- 
+
     <!-- Calculators Section -->
-    <section id="calculators" class="py-16 bg-navy-950 border-b border-gold-500/20">
+    <section id="calculators" class="py-16 bg-navy-950 border-b border-gold-400/25">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-12">
                 <span class="text-gold-400 font-bold text-xs tracking-widest uppercase block mb-1">أدوات المستثمر</span>
-                <h2 class="text-2xl md:text-3xl font-black text-white">الحاسبة التفاعلية ومحول العملات</h2>
+                <h2 class="text-2xl md:text-3xl font-black text-white">حاسبة العائد الاستثماري ومحول العملات</h2>
             </div>
- 
+
             <div class="grid md:grid-cols-2 gap-8">
- 
-                <!-- الحاسبة -->
-                <div class="bg-navy-900 border border-gold-500/30 p-8 rounded-3xl shadow-xl flex flex-col justify-between">
+                
+                <!-- الحاسبة الاستثمارية -->
+                <div class="bg-navy-900 border border-gold-400/35 p-8 rounded-3xl shadow-xl flex flex-col justify-between overflow-hidden">
                     <div>
                         <h3 class="text-xl font-black text-white mb-1 flex items-center space-x-2 space-x-reverse">
                             <i class="fa-solid fa-calculator text-gold-400 ml-2"></i>
                             <span>حاسبة العائد الاستثماري</span>
                         </h3>
-                        <p class="text-slate-400 text-xs mb-6">احسب العائد التقديري لنمو رأس المال العقاري</p>
- 
+                        <p class="text-slate-400 text-xs mb-6">احسب العائد التقديري لنمو رأس المال العقاري لحظياً</p>
+                        
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-xs font-bold text-gold-400 mb-1.5">مبلغ الاستثمار المبدئي:</label>
-                                <input type="number" id="amount" value="500000" class="w-full bg-navy-950 border border-gold-500/30 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-gold-400 font-bold text-sm">
+                                <input type="number" id="amount" value="500000" class="w-full bg-navy-950 border border-gold-400/35 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-gold-400 font-bold text-sm">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-gold-400 mb-1.5">مدة الاستثمار (بالسنوات):</label>
-                                <input type="number" id="years" value="3" class="w-full bg-navy-950 border border-gold-500/30 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-gold-400 font-bold text-sm">
+                                <input type="number" id="years" value="3" class="w-full bg-navy-950 border border-gold-400/35 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-gold-400 font-bold text-sm">
                             </div>
-                            <button onclick="calculateROI()" class="btn-special w-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-black py-3 rounded-xl shadow-md text-sm">
-                                حساب القيمة التقديرية
-                            </button>
- 
-                            <div id="result" class="hidden text-center bg-navy-950 border border-gold-500/30 p-4 rounded-xl mt-4">
+
+                            <div id="result" class="text-center bg-navy-950 border border-gold-400/35 p-4 rounded-xl mt-4 overflow-hidden">
                                 <p class="text-slate-300 text-xs">القيمة الإجمالية المتوقعة للأصل:</p>
-                                <h3 id="profitOutput" class="text-lg font-black text-gold-400 mt-1"></h3>
+                                <h3 id="profitOutput" class="text-lg font-black text-gold-400 mt-1 truncate">0 EGP <span class="text-xs text-slate-300 font-normal block mt-1 truncate">(صافي أرباح رأسمالية: 0 EGP)</span></h3>
                             </div>
                         </div>
                     </div>
                 </div>
- 
+
                 <!-- محول العملات -->
-                <div class="bg-navy-900 border border-gold-500/30 p-8 rounded-3xl shadow-xl flex flex-col justify-between">
+                <div class="bg-navy-900 border border-gold-400/35 p-8 rounded-3xl shadow-xl flex flex-col justify-between overflow-hidden">
                     <div>
                         <h3 class="text-xl font-black text-white mb-1 flex items-center space-x-2 space-x-reverse">
                             <i class="fa-solid fa-coins text-gold-400 ml-2"></i>
                             <span>محول العملات</span>
                         </h3>
-                        <p class="text-slate-400 text-xs mb-6">حول وقارن قيمة الاستثمار بين العملات المختلفة</p>
- 
+                        <p class="text-slate-400 text-xs mb-6">جلب أسعار الصرف الحية وتحديثها تلقائياً كل ساعة</p>
+                        
+                        <!-- تنبيه فشل جلب الأسعار -->
+                        <div id="currencyAlert" class="hidden bg-rose-500/20 border border-rose-500/60 text-rose-300 px-3 py-2 rounded-xl text-xs font-bold mb-4 flex items-center space-x-2 space-x-reverse">
+                            <i class="fa-solid fa-triangle-exclamation text-rose-400"></i>
+                            <span>تنبيه: تعذّر جلب الأسعار الحية من السيرفر. المحول متوقف مؤقتاً لتجنب الاعتماد على بيانات قديمة.</span>
+                        </div>
+
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-xs font-bold text-gold-400 mb-1.5">المبلغ:</label>
-                                <input type="number" id="currAmount" value="10000" class="w-full bg-navy-950 border border-gold-500/30 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-gold-400 font-bold text-sm">
+                                <input type="number" id="currAmount" value="1" class="w-full bg-navy-950 border border-gold-400/35 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-gold-400 font-bold text-sm">
                             </div>
                             <div class="grid grid-cols-2 gap-3">
                                 <div>
                                     <label class="block text-xs font-bold text-gold-400 mb-1.5">من عملة:</label>
-                                    <select id="fromCurr" class="w-full bg-navy-950 border border-gold-500/30 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-gold-400 text-xs font-bold">
-                                        <option value="KWD">دينار كويتي (KWD)</option>
+                                    <select id="fromCurr" class="w-full bg-navy-950 border border-gold-400/35 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-gold-400 text-xs font-bold">
+                                        <option value="KWD" selected>دينار كويتي (KWD)</option>
                                         <option value="USD">دولار أمريكي (USD)</option>
                                         <option value="EUR">يورو (EUR)</option>
                                         <option value="EGP">جنيه مصري (EGP)</option>
@@ -845,7 +916,7 @@
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-gold-400 mb-1.5">إلى عملة:</label>
-                                    <select id="toCurr" class="w-full bg-navy-950 border border-gold-500/30 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-gold-400 text-xs font-bold">
+                                    <select id="toCurr" class="w-full bg-navy-950 border border-gold-400/35 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-gold-400 text-xs font-bold">
                                         <option value="EGP" selected>جنيه مصري (EGP)</option>
                                         <option value="USD">دولار أمريكي (USD)</option>
                                         <option value="KWD">دينار كويتي (KWD)</option>
@@ -853,34 +924,29 @@
                                     </select>
                                 </div>
                             </div>
-                            <button onclick="convertCurrency()" class="btn-special w-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-950 font-black py-3 rounded-xl shadow-md text-sm">
-                                تحويل العملة
-                            </button>
- 
-                            <div id="currResult" class="hidden text-center bg-navy-950 border border-gold-500/30 p-4 rounded-xl mt-4">
-                                <p class="text-slate-300 text-xs">القيمة المعادلة التقديرية:</p>
-                                <h3 id="currOutput" class="text-lg font-black text-gold-400 mt-1"></h3>
+
+                            <div id="currResult" class="text-center bg-navy-950 border border-gold-400/35 p-4 rounded-xl mt-4 overflow-hidden">
+                                <p class="text-slate-300 text-xs">القيمة المعادلة المحدثة حياً:</p>
+                                <h3 id="currOutput" class="text-lg font-black text-gold-400 mt-1 truncate">جاري جلب الأسعار اللحظية...</h3>
                             </div>
                         </div>
                     </div>
                 </div>
- 
+
             </div>
         </div>
     </section>
- 
+
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-navy-900">
         <div class="container mx-auto px-6 max-w-4xl text-center">
             <span class="text-gold-400 font-bold text-xs tracking-widest uppercase block mb-1">تواصل معنا</span>
             <h2 class="text-2xl md:text-3xl font-black text-white mb-10">شركة الراوي للاستثمار العقاري</h2>
- 
+            
             <div class="grid md:grid-cols-2 gap-6 items-stretch max-w-3xl mx-auto">
- 
-                <!-- 1. Phone & Email Box -->
-                <div class="interactive-card bg-navy-950 p-6 rounded-2xl border border-gold-500/20 flex flex-col justify-between space-y-4">
+                <div class="interactive-card bg-navy-950 p-6 rounded-2xl border border-gold-400/25 flex flex-col justify-between space-y-4">
                     <div>
-                        <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mx-auto mb-3 border border-gold-500/20">
+                        <div class="w-12 h-12 rounded-full bg-gold-400/15 text-gold-400 flex items-center justify-center text-xl mx-auto mb-3 border border-gold-400/25">
                             <i class="fa-solid fa-headset"></i>
                         </div>
                         <h3 class="text-base font-bold text-white mb-2">الاتصال الهاتفي والبريد</h3>
@@ -890,7 +956,7 @@
                                 <a href="tel:+201156444525" class="text-white font-bold text-base hover:text-gold-400 transition" dir="ltr">+20 115 644 4525</a>
                             </div>
                             <div class="flex items-center justify-center space-x-2 space-x-reverse">
-                                <i class="fa-regular fa-envelope text-gold-500 text-xs"></i>
+                                <i class="fa-regular fa-envelope text-gold-400 text-xs"></i>
                                 <a href="mailto:alrawy.investment@gmail.com" class="text-slate-300 font-medium text-xs hover:text-gold-400 transition">alrawy.investment@gmail.com</a>
                             </div>
                         </div>
@@ -899,8 +965,7 @@
                         أرسل بريد إلكتروني
                     </a>
                 </div>
- 
-                <!-- 2. WhatsApp Box -->
+
                 <div class="whatsapp-card bg-navy-950 p-6 rounded-2xl border border-emerald-500/60 flex flex-col justify-between space-y-4 shadow-lg shadow-emerald-950/30">
                     <div>
                         <div class="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mx-auto mb-3 border border-emerald-500/40">
@@ -910,34 +975,39 @@
                         <p class="text-slate-300 text-xs mt-2">تحدث معنا مباشرة للرد الفوري على الاستفسارات وتفاصيل الأراضي.</p>
                         <span class="block text-emerald-400 font-bold text-sm mt-3" dir="ltr">+20 115 644 4525</span>
                     </div>
- 
                     <a href="https://wa.me/201156444525" target="_blank" class="btn-special block w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-2.5 rounded-xl text-xs shadow-md border border-emerald-400/40 flex items-center justify-center space-x-2 space-x-reverse">
                         <i class="fa-brands fa-whatsapp text-base"></i>
                         <span>دخول للمحادثة المباشرة</span>
                     </a>
                 </div>
- 
             </div>
         </div>
     </section>
- 
+
     <!-- Footer -->
-    <footer class="bg-navy-950 border-t border-gold-500/20 py-6 text-center text-slate-400 text-xs">
+    <footer class="bg-navy-950 border-t border-gold-400/25 py-6 text-center text-slate-400 text-xs">
         <div class="container mx-auto px-6">
             <p>© 2015 - <span id="currentYear"></span> شركة الراوي للاستثمار العقاري. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
- 
+
     <!-- JavaScript Scripts -->
     <script>
-        // 1. Automatic Year Update
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
- 
+        // 1. Automatic Year & Date Update
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+        const expYears = currentYear - 2015;
+        document.getElementById('dynamicExperienceYears').textContent = `+${expYears} عاماً`;
+
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = new Date().toLocaleDateString('ar-EG', options);
+        document.getElementById('currentDateDisplay').textContent = formattedDate;
+
         // 2. Mobile Hamburger Menu Toggle
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const menuIcon = document.getElementById('menuIcon');
- 
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             if (mobileMenu.classList.contains('hidden')) {
@@ -948,8 +1018,7 @@
                 menuIcon.classList.add('fa-xmark');
             }
         });
- 
-        // Close mobile menu when link clicked
+
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -958,76 +1027,124 @@
                 menuIcon.classList.add('fa-bars');
             });
         });
- 
-        // 3. Map Modal Function (Interactive Google Maps + Info + WhatsApp)
+
+        // 3. Map Modal Function (Satellite View z=14)
         function openMapModal(cityName, lat, lng, cityInfo) {
             document.getElementById('modalCityTitle').textContent = cityName;
             document.getElementById('modalCityInfo').textContent = cityInfo;
- 
-            // Set Google Maps iframe src with precise independent lat/lng and zoom level 14
-            const mapUrl = `https://maps.google.com/maps?q=${lat},${lng}&hl=ar&z=14&output=embed`;
+            const mapUrl = `https://maps.google.com/maps?q=${lat},${lng}&t=k&hl=ar&z=14&output=embed`;
             document.getElementById('mapIframe').src = mapUrl;
- 
-            // Set WhatsApp Message
             const message = encodeURIComponent(`السلام عليكم، أرغب في الاستفسار عن تفاصيل وحجز الأراضي والمواقع المتاحة في: ${cityName}`);
             document.getElementById('modalWhatsappBtn').href = `https://wa.me/201156444525?text=${message}`;
- 
             document.getElementById('mapModal').classList.remove('hidden');
         }
- 
+
         function closeMapModal() {
             document.getElementById('mapModal').classList.add('hidden');
             document.getElementById('mapIframe').src = "";
         }
- 
+
         // 4. Investment Calculator
         function calculateROI() {
-            const amount = parseFloat(document.getElementById('amount').value);
-            const years = parseFloat(document.getElementById('years').value);
+            const amountInput = document.getElementById('amount').value;
+            const yearsInput = document.getElementById('years').value;
+            const profitOutput = document.getElementById('profitOutput');
+
+            const amount = parseFloat(amountInput);
+            const years = parseFloat(yearsInput);
             const annualRate = 0.18;
- 
-            if(isNaN(amount) || isNaN(years) || amount <= 0 || years <= 0) {
-                alert('الرجاء إدخال أرقام صحيحة.');
+            
+            if(isNaN(amount) || isNaN(years) || amount <= 0 || years <= 0 || amountInput === '' || yearsInput === '') {
+                profitOutput.innerHTML = `0 EGP <span class="text-xs text-slate-300 font-normal block mt-1">(صافي أرباح رأسمالية: 0 EGP)</span>`;
                 return;
             }
- 
+
             const totalProfit = amount * Math.pow((1 + annualRate), years) - amount;
             const finalTotal = amount + totalProfit;
- 
-            const resultDiv = document.getElementById('result');
-            const profitOutput = document.getElementById('profitOutput');
- 
-            profitOutput.innerHTML = `${finalTotal.toLocaleString('en-US', {maximumFractionDigits: 0})} <span class="text-xs text-slate-300 font-normal block mt-1">(صافي أرباح رأسمالية: ${totalProfit.toLocaleString('en-US', {maximumFractionDigits: 0})})</span>`;
-            resultDiv.classList.remove('hidden');
+
+            let formattedTotal = finalTotal;
+            let formattedProfit = totalProfit;
+
+            if (finalTotal > 1e12 || totalProfit > 1e12) {
+                formattedTotal = finalTotal.toExponential(2);
+                formattedProfit = totalProfit.toExponential(2);
+            } else {
+                formattedTotal = finalTotal.toLocaleString('en-US', {maximumFractionDigits: 0});
+                formattedProfit = totalProfit.toLocaleString('en-US', {maximumFractionDigits: 0});
+            }
+
+            profitOutput.innerHTML = `${formattedTotal} EGP <span class="text-xs text-slate-300 font-normal block mt-1 truncate">(صافي أرباح رأسمالية: ${formattedProfit} EGP)</span>`;
         }
- 
-        // 5. Currency Converter
-        function convertCurrency() {
-            const amount = parseFloat(document.getElementById('currAmount').value);
-            const from = document.getElementById('fromCurr').value;
+
+        document.getElementById('amount').addEventListener('input', calculateROI);
+        document.getElementById('years').addEventListener('input', calculateROI);
+        calculateROI();
+
+        // 5. Live Currency Converter
+        let globalRates = {};
+        async function fetchLiveRates() {
+            const alertBox = document.getElementById('currencyAlert');
+            const currOutput = document.getElementById('currOutput');
             const to = document.getElementById('toCurr').value;
- 
-            if(isNaN(amount) || amount <= 0) {
-                alert('الرجاء إدخال مبلغ صحيح.');
+
+            try {
+                const response = await fetch('https://open.er-api.com/v6/latest/USD');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json();
+                
+                if(data && data.rates) {
+                    globalRates = data.rates;
+                    alertBox.classList.add('hidden');
+                    convertCurrency();
+                } else {
+                    throw new Error('Invalid data structure');
+                }
+            } catch (error) {
+                globalRates = {};
+                alertBox.classList.remove('hidden');
+                currOutput.innerHTML = `0 <span class="text-xs font-bold text-gold-400">${to}</span>`;
+            }
+        }
+
+        function convertCurrency() {
+            const amountInput = document.getElementById('currAmount').value;
+            const currOutput = document.getElementById('currOutput');
+            const to = document.getElementById('toCurr').value;
+            const alertBox = document.getElementById('currencyAlert');
+
+            if(amountInput === '' || isNaN(amountInput)) {
+                currOutput.innerHTML = `0 <span class="text-xs font-bold text-gold-400">${to}</span>`;
                 return;
             }
- 
-            const ratesToEGP = {
-                'EGP': 1,
-                'USD': 50.5,
-                'KWD': 165.0,
-                'EUR': 54.0
-            };
- 
-            const valueInEGP = amount * ratesToEGP[from];
-            const finalValue = valueInEGP / ratesToEGP[to];
- 
-            const currResult = document.getElementById('currResult');
-            const currOutput = document.getElementById('currOutput');
- 
-            currOutput.innerHTML = `${finalValue.toLocaleString('en-US', {maximumFractionDigits: 2})} <span class="text-xs font-bold text-gold-400">${to}</span>`;
-            currResult.classList.remove('hidden');
+
+            const amount = parseFloat(amountInput);
+            const from = document.getElementById('fromCurr').value;
+
+            if(Object.keys(globalRates).length === 0 || !globalRates[from] || !globalRates[to]) {
+                alertBox.classList.remove('hidden');
+                currOutput.innerHTML = `0 <span class="text-xs font-bold text-gold-400">${to}</span>`;
+                return;
+            }
+
+            const amountInUSD = amount / globalRates[from];
+            const finalValue = amountInUSD * globalRates[to];
+
+            let formattedVal = finalValue;
+            if (finalValue > 1e12) {
+                formattedVal = finalValue.toExponential(2);
+            } else {
+                formattedVal = finalValue.toLocaleString('en-US', {maximumFractionDigits: 2});
+            }
+
+            currOutput.innerHTML = `${formattedVal} <span class="text-xs font-bold text-gold-400">${to}</span>`;
         }
+
+        document.getElementById('currAmount').addEventListener('input', convertCurrency);
+        document.getElementById('fromCurr').addEventListener('change', convertCurrency);
+        document.getElementById('toCurr').addEventListener('change', convertCurrency);
+
+        fetchLiveRates();
+        setInterval(fetchLiveRates, 3600000);
     </script>
 </body>
 </html>
